@@ -68,9 +68,25 @@ input[type="radio"]{
     font-family: var(--font-text);
 
 }
+
+.row select{
+    border: none;
+    /* border-bottom: 1px solid var(--b6); */
+    background: var(--light-blue);
+    color: var(--b5);
+    outline: none;
+    width: 200px;
+    position: relative;
+    cursor: pointer;
+}
+.row select:disabled{
+    background: var(--cinza-fundo);
+}
+
+
 .row ul{
     list-style: none;
-    color: var(--b4)
+    color: var(--b4);
 }
 .estado li{
     width: 100px;

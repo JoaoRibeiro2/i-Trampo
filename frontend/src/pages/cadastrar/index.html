@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>cadastrar</title>
-
+        
         <link rel="stylesheet" href="../../styles/globals.css">
         <link rel="stylesheet" href="style.css">
         <!-- <link rel="stylesheet" href="radio.css"> -->
@@ -18,89 +18,83 @@
             
             <form id="cadastrar">
                 <div class="cadastrar">
-                
+                    
                     <div class="row">
                         <label class="label" for="nome">Nome</label>
                         <input type="text" id="nome" placeholder="Digite seu nome">
-    
+                        
                         <label class="label" for="email">Email</label>
                         <input type="email" id="email" placeholder="email@exemplo.com">
                     </div>
-
-                      <div class="row">
+                    
+                    <div class="row">
                         <label class="label" for="CPF">CPF</label>
                         <input type="text" id="cpf" placeholder="000.000.000-00">
-    
+                        
                         <label class="label" for="dt_nasc">Data de Nascimento</label>
                         <input type="date" id="dt_nasc" placeholder="00/00/0000">
-
-                    </div>
-
-                    <div class="row">
                         
-                        <label class="label" for="cidade">Cidade</label>
-                        <input id="cidade" type="text">
-
-                        <label class="label" for="estado">Estado</label>
-                        <nav>
-                                <input type="text" id="estado" maxlength="2">
-                        </nav>
                     </div>
-
+                    
+                    <div class="row">
+                        <label class="label" for="estado">Estado</label>
+                        
+                        <select name="uf">
+                            <option value="">Selecione o estado<img src="../../assets/icons/bell.svg" alt=""></option>
+                            
+                        </select>
+                        <input type="hidden" name="state">
+                        <label class="label" for="">Cidade</label>
+                        <select  name="cidade" id="">
+                            <option value="">Selecione a cidade
+                        </option>
+                        </select>
+                    </div>
+                    
                     <div class="row" id="genero">
                         <label class="label" for="">Gênero</label>
                         <label class="radio" for="masc">
                             <input type="radio" name="genero" value="masculino" id="masc" checked>Masculino
-                        <span></span>
+                            <span></span>
                         </label>
                         <label class="radio" for="fem">
                             <input type="radio" name="genero" value="feminino" id="fem">Feminino
-                        <span></span>
+                            <span></span>
                         </label>
                         <label class="radio" for="nb">
                             <input type="radio" name="genero" value="nao_binario" id="nb">Não binário
                         <span></span>
-                        </label>
-                    </div>
-
-                    <div class="row">
-                        <label class="label" for="#">Escolha uma opção</label>
-                        <label class="radio" for="apenas_contratar">
-                            <input type="radio" name="opcao" id="apenas_contratar">Quero apenas contratar
-                            <span></span>
-                        </label>
-                        <label class="radio" for="i_tramper">
-                            <input type="radio" name="opcao" id="i_tramper">Quero ser um i-Tramper
-                            <span></span>
-                        </label>
-                        
-                    </div>
-
-                    <div class="row">
-                        
-                        <label class="label"  for="senha">Senha</label>
-                        <input type="password" id="senha">
-                        
-                        <label class="label" for="confirmar_senha">Confirmar sua senha</label>
-                        <input type="password" id="confirma_senha">
-                    </div>
-                    <div class="enviar">
-                        <button class="btn-form">Finalizar</button>
-                    </div>
+                    </label>
                 </div>
-            </form>
-        </section>
 
-        <script src="../../js/cadastrar.js"></script>
-        <!-- <script>
-            let cadastrar = document.querySelector("#cadastrar");
-            let u_senha = document.querySelector("#senha");
-            cadastrar.addEventListener("submit", function(event){
-            let senha = u_senha.value;
-            event.preventDefault();
-            console.log(senha) ; 
-            console.log('Hello');
-            })
-        </script> -->
-    </body>
+                <div class="row">
+                    <label class="label" for="#">Escolha uma opção</label>
+                    <label class="radio" for="apenas_contratar">
+                        <input type="radio" name="opcao" id="apenas_contratar">Quero apenas contratar
+                        <span></span>
+                    </label>
+                    <label class="radio" for="i_tramper">
+                        <input type="radio" name="opcao" id="i_tramper">Quero ser um i-Tramper
+                        <span></span>
+                    </label>
+                    
+                </div>
+                
+                <div class="row">
+                    
+                    <label class="label"  for="senha">Senha</label>
+                    <input type="password" id="senha">
+                    
+                    <label class="label" for="confirmar_senha">Confirmar sua senha</label>
+                    <input type="password" id="confirma_senha">
+                </div>
+                <div class="enviar">
+                    <button class="btn-form">Finalizar</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <script src="https://kit.fontawesome.com/97485272cd.js" crossorigin="anonymous"></script>
+    <script src="../../js/cadastrar.js"></script>
+</body>
 </html>
