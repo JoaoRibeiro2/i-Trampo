@@ -20,6 +20,15 @@ export default StyleSheet.create({
         fontSize: 20,
         color: '#4D4D4D'
     },
+    destaques: {
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        marginTop: 50
+    },
+    list: {
+        // marginTop: 20,
+        marginBottom: 30
+    },
     card: {
         width: 330,
         height: 160,
@@ -71,5 +80,19 @@ export default StyleSheet.create({
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 12
-    }
+    },
+    line: {
+        width: 330,
+        height: 1,
+        position: 'absolute',
+        backgroundColor: '#c9c9c9',
+        top: 85,
+        marginLeft: 'auto',
+        marginRight: 'auto'
+    },
+    avaliacoes: {
+        flexDirection: 'row',
+        marginTop: 20
+    },
+
 })
