@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, TextInput, TouchableOpacity, StyleSheet, Image, KeyboardAvoidingView, ScrollView } from 'react-native';
-
+import {View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, Image, KeyboardAvoidingView, ScrollView } from 'react-native';
+import { useNavigation} from '@react-navigation/native';
 import {Feather} from '@expo/vector-icons'
 import { Formik } from 'formik';
 
@@ -34,6 +34,15 @@ function Form({checked}) {
 
     const [gender, setGender] = useState('');
 
+    const navigation = useNavigation();
+
+
+
+    function Login(){
+        
+        alert('Cadastrado com sucesso')
+        navigation.navigate('Login')
+    }
     useEffect(() => {
         console.log(gender)
     })
@@ -53,23 +62,7 @@ function Form({checked}) {
                 desc: ''
             }}
             onSubmit={values => {
-                const user = {
-                    "usuario": [{
-                    nome: `${values.nome}`,
-                    email: `${values.email}`,
-                    senha: `${values.senha}`,
-                    cpf: `${values.cpf}`,
-                    tel: `995412354`,
-                    dt_nasc: `${values.dt_nasc}`,
-                    cidade: `${values.cidade}`,
-                    estado: `${values.estado}`,
-                    genero: `${gender.genero}`,
-                    foto: `1234`,
-                    desc: `111`
-                    }]
-                }
-                // Cadastro(user)
-                console.log(user)
+                Login
             }}>
             {({values, handleChange, handleSubmit, errors}) => (
             <>
@@ -142,19 +135,21 @@ function Form({checked}) {
                 </TouchableOpacity>
                 <TextInput
                 style={styles.input}
-                placeholder="2345"
+                placeholder=""
                 value={values.senha}
                 onChangeText={handleChange('senha')}
+                secureTextEntry={true}
                 />
 
                 <Text style={styles.label}>Confirmar Senha</Text>
                 <TextInput
                 style={styles.input}
-                placeholder=""/>
+                placeholder=""
+                secureTextEntry={true}/>
 
             <TouchableOpacity 
             style={styles.button}
-            onPress={handleSubmit}>
+            onPress={onSubmit}>
                 <Text style={styles.textButton}>Cadastrar</Text>
             </TouchableOpacity>
 
