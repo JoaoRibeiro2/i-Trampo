@@ -10,6 +10,8 @@ import inputRadio from '../../assets/inputRadio.png'
 import Radio from '../../components/Radio';
 import styles from './styles';
 
+import Cadastro from '../../services/cadastrar'
+
 export default function Cadastrar() {
     return (
 
@@ -52,10 +54,21 @@ function Form({checked}) {
             }}
             onSubmit={values => {
                 const user = {
-                    "usuario": [
-                        values
-                    ]
+                    "usuario": [{
+                    nome: `${values.nome}`,
+                    email: `${values.email}`,
+                    senha: `${values.senha}`,
+                    cpf: `${values.cpf}`,
+                    tel: `995412354`,
+                    dt_nasc: `${values.dt_nasc}`,
+                    cidade: `${values.cidade}`,
+                    estado: `${values.estado}`,
+                    genero: `${gender.genero}`,
+                    foto: `1234`,
+                    desc: `111`
+                    }]
                 }
+                // Cadastro(user)
                 console.log(user)
             }}>
             {({values, handleChange, handleSubmit, errors}) => (
@@ -122,19 +135,14 @@ function Form({checked}) {
                     label="Masculino"
                     onChangeText={handleChange('genero')}
                     />
-                    {/* <Radio 
-                    img={inputRadio} 
-                    vl={setGender} 
-                    value={values.genero}
-                    label="Feminino"
-                    onChangeText={handleChange('genero')}
-                    /> */}
                 </View>
 
                 <Text style={styles.label}>Senha</Text>
+                <TouchableOpacity>
+                </TouchableOpacity>
                 <TextInput
                 style={styles.input}
-                placeholder=""
+                placeholder="2345"
                 value={values.senha}
                 onChangeText={handleChange('senha')}
                 />
@@ -155,47 +163,6 @@ function Form({checked}) {
         </Formik>
     )
 }
-
-
-
-// function Form(){
-//     const [check, setCheck] = useState(0);
-//     var inputRadio = [
-//         {option: 1, text: "Quero apenas contratar"},
-//         {option: 2, text: "Quero ser um I-tramper"}
-//     ]
-//     return (
-//         <View style={style}>
-//             {inputRadio.map((inputRadio, key) => {
-//                 return(
-//                     <View key={inputRadio.option}>
-//                         {check == key ? (
-//                             <TouchableOpacity style={style.btn}>
-//                             <Image
-//                                 source={radioSelected}
-//                                 style={style.radio}
-//                             />
-//                             <Text>{inputRadio.text}</Text>
-//                             </TouchableOpacity>
-//                         ) : (
-//                         <TouchableOpacity 
-//                             onPress={() => {
-//                                 setCheck(key)
-//                             }}
-//                         style={style.btn}>
-//                         <Image
-//                             source={radio}
-//                             style={style.radio}
-//                         />
-//                         <Text>{inputRadio.text}</Text>
-//                         </TouchableOpacity>
-//                         )}
-//                     </View>
-//                 )
-//              })}
-//         </View>
-//     )
-// }
 
 const style = StyleSheet.create({
     selectGenero:{

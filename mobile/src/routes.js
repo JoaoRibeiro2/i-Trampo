@@ -1,31 +1,76 @@
 import React from 'react';
+import {StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
-const Stack = createStackNavigator();
+import {MaterialIcons, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons'
+
+const Tab = createMaterialBottomTabNavigator();
 
 import Login from './views/Login';
 import Cadastrar from './views/Cadastrar';
 
+import Home from './views/Home';
+import Chat from './views/Chat';
+import Notifications from './views/Notifications';
+import Perfil from './views/Perfil';
+
 export default function Routes() {
     return(
         <NavigationContainer>
-            <Stack.Navigator 
-            initialRouteName={"Cadastrar"}
-            screenOptions={{headerShown: false}}
+            <Tab.Navigator
+                inactiveColor="#B2CBFF"
+                activeColor="#fff"
+                barStyle={style.bar}
             >
-
-                <Stack.Screen    
-                    name="Login"
-                    component={Login}
+                <Tab.Screen name="Home" 
+                component={Home} 
+                options={{
+                    tabBarLabel: 'Home',
+                    tabBarIcon: ({color}) => (
+                        <FontAwesome name="home" color={color} size={26} />
+                    )
+                }}
                 />
 
-                <Stack.Screen 
-                    name="Cadastrar"
-                    component={Cadastrar}
+                <Tab.Screen name="Chat" 
+                component={Chat}
+                options={{
+                    tabBarLabel: 'Chat',
+                    tabBarIcon: ({color}) => (
+                        <MaterialCommunityIcons name="chat-processing" size={26} color={color} />
+                    )
+                }}
                 />
 
-            </Stack.Navigator>
+                <Tab.Screen name="Notifications" 
+                component={Notifications} 
+                options={{
+                    tabBarLabel: 'Notificações',
+                    tabBarIcon: ({color}) => (
+                        <MaterialIcons name="notifications" color={color} size={26} />
+                    )
+                }}
+                />
+
+                <Tab.Screen name="Perfil" 
+                component={Perfil} 
+                options={{
+                    tabBarLabel: 'Perfil',
+                    tabBarIcon: ({color}) => (
+                        <MaterialIcons name="account-circle" color={color} size={26} />
+                    )
+                }}
+                />
+            </Tab.Navigator>        
         </NavigationContainer>
     )
 }
+
+const style = StyleSheet.create({
+    bar: {
+        height: 70,
+        backgroundColor: '#0034A3',
+        justifyContent: 'center'
+    }
+})

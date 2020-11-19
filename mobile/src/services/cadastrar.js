@@ -13,9 +13,11 @@ export default function Cadastro(data) {
             alert('Usuario Ja existe')
         }else if(response == 'erro'){
             alert('Erro ao cadastrar')
+            console.log(response)
         }else{
-            alert('Cadastrado com sucesso')
-            window.location.href = "../login/index.html";
+            console.log('Cadastrado com sucesso')
+            console.log(response.nome)
         }
     })
 }
+
