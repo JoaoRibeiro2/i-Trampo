@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, TextInput, TouchableOpacity, Image, KeyboardAvoidingView } from 'react-native';
+import { useNavigation} from '@react-navigation/native';
 import styles from './styles';
 import avatar from '../../assets/avatar.png';
 
@@ -11,6 +12,11 @@ import { FlatList } from 'react-native-gesture-handler';
 
 
 export default function Login() {
+    const navigation = useNavigation();
+    function Cadastrar(){
+        navigation.navigate('Cadastrar');
+    }
+
     return (
         <KeyboardAvoidingView contentContainerStyle={styles.box} behavior="position" enabled>
         <View style={styles.container}>
@@ -22,7 +28,7 @@ export default function Login() {
 
             <View style={styles.span2}>
                 <Text style={styles.span2text}>Ainda não possue uma conta?</Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={Cadastrar}>
                     <Text style={styles.link}>Criar conta <Feather name="arrow-right" size={16} /></Text> 
                 </TouchableOpacity>
             </View>
@@ -33,6 +39,14 @@ export default function Login() {
 
 
 function Form(){
+    const navigation = useNavigation();
+
+    function Telas(){
+        navigation.navigate('Telas');
+    }
+    
+
+
     return(
         <Formik
         initialValues={{
@@ -73,7 +87,7 @@ function Form(){
 
             <TouchableOpacity 
             style={styles.button}
-            onPress={handleSubmit}>
+            onPress={Telas}>
 
                 <Text style={styles.textButton}>Entrar</Text>
             </TouchableOpacity>
