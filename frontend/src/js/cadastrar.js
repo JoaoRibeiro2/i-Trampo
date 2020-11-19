@@ -6,8 +6,8 @@ let u_senha = document.querySelector("#senha");
 let u_confirma_senha = document.querySelector("#confirma_senha");
 let u_cpf = document.querySelector("#cpf");
 let u_dt_nasc = document.querySelector("#dt_nasc");
-let u_cidade = document.querySelector("#cidade");
-let u_estado = document.querySelector("#estado");
+let u_cidade = document.querySelector("#city");
+let u_estado = document.querySelector("#uf");
 let u_genero = document.querySelector('input[name="genero"]:checked');
 
 

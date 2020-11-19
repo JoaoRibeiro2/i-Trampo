@@ -22,12 +22,19 @@ input[type="radio"]{
     height: 900px;
     border-radius: 10px;
     background: var(--cinza-fundo);
+    margin-top: 20px;
 }
 
 .avatar{
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.avatar img {
+    width: 150px;
+    height: 150px;
 }
 
 .avatar h1{
@@ -37,7 +44,6 @@ input[type="radio"]{
 .cadastrar{
     width: 80%;
     margin: 10px auto;
-
     background: var(--cinza-fundo);
 }
 
